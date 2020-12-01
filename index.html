@@ -59,8 +59,8 @@
                         results.data.forEach(row => {
                             map.setFeatureState({
                                 //YOUR TURN: Replace with your source tileset and source layer
-                                source: 'ca-districts-2018',
-                                sourceLayer: 'ca-districts-2018',
+                                source: 'states',
+                                sourceLayer: 'states',
                                 //YOUR TURN: Replace with unqiue ID row name
                                 id: row.States
                             },
@@ -72,23 +72,16 @@
 
                         //YOUR TURN: Add layers to the map
                         map.addLayer({
-                            'id': 'ca-district-fill',
+                            'id': 'state-fill',
                             'type': 'fill',
-                            'source': 'ca-districts-2018',
-                            'source-layer': 'ca-districts-2018',
+                            'source': 'states',
+                            'source-layer': 'states',
                             'layout': {},
                             'paint': {
-                                'fill-color': "#CE575E"
-                                    /*[
-                                        "match",
-                                        ["feature-state", "party"],
-                                        "democrat",
-                                        "#6BA0C7",
-                                        "republican",
+                                'fill-color':
+                                    [
                                         "#CE575E",
-                                        "#ccc"
-
-                                    ],*/
+                                    ],
                                 'fill-opacity': 0.9
         
                             }
@@ -96,10 +89,10 @@
                         });
 
                         map.addLayer({
-                            'id': 'ca-district-line',
+                            'id': 'state-line',
                             'type': 'line',
-                            'source': 'ca-districts-2018',
-                            'source-layer': 'ca-districts-2018',
+                            'source': 'states',
+                            'source-layer': 'states',
                             'layout': {
                                 'line-join': 'round',
                                 'line-cap': 'round'
@@ -115,7 +108,7 @@
                 }
             });
             //YOUR TURN: Add source layer
-            map.addSource('ca-districts-2018', {
+            map.addSource('states', {
                 type: 'vector',
                 url: 'mapbox://tileset-source/aivys/states',
                 promoteId: 'GEOID'
@@ -129,11 +122,11 @@
             closeOnClick: false
         });
 
-        map.on('mousemove', 'ca-district-fill', function (e) {
+        map.on('mousemove', 'state-fill', function (e) {
 
             map.getCanvas().style.cursor = 'pointer';
 
-            var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
+            var district = map.queryRenderedFeatures(e.point, { layers: ['state-fill'] });
 
             var props = district[0].properties;
 
