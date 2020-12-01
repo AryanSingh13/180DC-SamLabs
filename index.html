@@ -111,7 +111,7 @@
 
         });
 
-        /*
+        
         var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
@@ -122,15 +122,14 @@
             var props = district[0].properties;
             var state = district[0].state;
             var content = '<b>' + 'District Details' + '</b>' + '<br>';
-            content += 'Representative: ' + state.candidate + '<br>';
-            content += 'District: ' + props.CD116FP + '<br>';
+            content += 'Total: ' + state.total + '<br>';
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
         map.on('mouseleave', 'county-fill', function () {
             map.getCanvas().style.cursor = '';
             popup.remove()
         });
-        */
+        
 
     </script>
 
