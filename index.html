@@ -42,7 +42,6 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/light-v10', //style url
-            zoom: 4.5,
         });
 
         map.on('load', function () {
@@ -73,7 +72,7 @@
                         map.addLayer({
                             'id': 'ca-district-fill',
                             'type': 'fill',
-                            'source': 'NAME',
+                            'source': 'hello world',
                             'source-layer': 'NAME',
                             'layout': {},
                             'paint': {
@@ -87,7 +86,7 @@
                         map.addLayer({
                             'id': 'ca-district-line',
                             'type': 'line',
-                            'source': 'NAME',
+                            'source': 'hello world',
                             'source-layer': 'NAME',
                             'layout': {
                                 'line-join': 'round',
@@ -104,7 +103,7 @@
                 }
             });
             //YOUR TURN: Add source layer
-            map.addSource('NAME', {
+            map.addSource('hello world', {
                 type: 'vector',
                 url: 'mapbox://aivys.states',
                 promoteId: 'NAME'
