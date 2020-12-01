@@ -59,10 +59,10 @@
                         results.data.forEach(row => {
                             map.setFeatureState({
                                 //YOUR TURN: Replace with your source tileset and source layer
-                                source: 'states',
-                                sourceLayer: 'states',
+                                source: 'aivys.states',
+                                sourceLayer: 'aivys.states',
                                 //YOUR TURN: Replace with unqiue ID row name
-                                id: row.district
+                                id: row.States
                             },
                                 //YOUR TURN: Add rows you want to style/interact with
                                 {
@@ -72,10 +72,10 @@
 
                         //YOUR TURN: Add layers to the map
                         map.addLayer({
-                            'id': 'state-fill',
+                            'id': 'aivys.states-fill',
                             'type': 'fill',
-                            'source': 'states',
-                            'source-layer': 'states',
+                            'source': 'aivys.states',
+                            'source-layer': 'aivys.states',
                             'layout': {},
                             'paint': {
                                 'fill-color': 
@@ -96,10 +96,10 @@
                         });
 
                         map.addLayer({
-                            'id': 'state-line',
+                            'id': 'aivys.states-line',
                             'type': 'line',
-                            'source': 'states',
-                            'source-layer': 'states',
+                            'source': 'aivys.states',
+                            'source-layer': 'aivys.states',
                             'layout': {
                                 'line-join': 'round',
                                 'line-cap': 'round'
@@ -115,10 +115,10 @@
                 }
             });
             //YOUR TURN: Add source layer
-            map.addSource('states', {
+            map.addSource('aivys.states', {
                 type: 'vector',
-                url: 'mapbox://mapbox-community.ca-districts-2018',
-                promoteId: 'GEOID'
+                url: 'mapbox://tilesets-source/aivys/states',
+                promoteId: 'NAME'
             });
 
         });
