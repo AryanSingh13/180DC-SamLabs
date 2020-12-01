@@ -62,7 +62,7 @@
                                 source: 'states',
                                 sourceLayer: 'states',
                                 //YOUR TURN: Replace with unqiue ID row name
-                                id: row.States
+                                id: row.district
                             },
                                 //YOUR TURN: Add rows you want to style/interact with
                                 {
@@ -118,7 +118,7 @@
             map.addSource('states', {
                 type: 'vector',
                 url: 'mapbox://mapbox-community.ca-districts-2018',
-                promoteId: 'NAME'
+                promoteId: 'GEOID'
             });
 
         });
