@@ -139,9 +139,8 @@
 
             var state = district[0].state;
 
-            var content = '<b>' + 'District Details' + '</b>' + '<br>';
-            content += 'Representative: ' + state.candidate + '<br>';
-            content += 'District: ' + props.CD116FP + '<br>';
+            var content = '<b>' + 'State Details' + '</b>' + '<br>';
+            content += 'Total: ' + state.total + '<br>';
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
 
         });
