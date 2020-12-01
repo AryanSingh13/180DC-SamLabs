@@ -78,7 +78,17 @@
                             'source-layer': 'states',
                             'layout': {},
                             'paint': {
-                                'fill-color': "#CE575E"
+                                'fill-color': 
+                                    [
+                                        "match",
+                                        ["feature-state", "party"],
+                                        "democrat",
+                                        "#6BA0C7",
+                                        "republican",
+                                        "#CE575E",
+                                        "#ccc"
+
+                                    ],
                                 'fill-opacity': 0.9
         
                             }
