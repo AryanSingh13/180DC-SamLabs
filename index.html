@@ -111,37 +111,8 @@
             map.addSource('states', {
                 type: 'vector',
                 url: 'mapbox://tileset-source/aivys/states',
-                promoteId: 'GEOID'
+                promoteId: 'GEO_ID'
             });
-
-        });
-
-
-        var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
-        });
-
-        map.on('mousemove', 'state-fill', function (e) {
-
-            map.getCanvas().style.cursor = 'pointer';
-
-            var district = map.queryRenderedFeatures(e.point, { layers: ['state-fill'] });
-
-            var props = district[0].properties;
-
-            var state = district[0].state;
-
-            var content = '<b>' + 'State Details' + '</b>' + '<br>';
-            content += 'Total: ' + state.total + '<br>';
-            popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
-
-        });
-
-        map.on('mouseleave', 'county-fill', function () {
-            map.getCanvas().style.cursor = '';
-            popup.remove()
-
 
         });
 
