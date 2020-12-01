@@ -59,8 +59,8 @@
                         results.data.forEach(row => {
                             map.setFeatureState({
                                 //YOUR TURN: Replace with your source tileset and source layer
-                                source: 'states',
-                                sourceLayer: 'states',
+                                source: 'aivys.states',
+                                sourceLayer: 'aivys.states',
                                 //YOUR TURN: Replace with unqiue ID row name
                                 id: row.States
                             },
@@ -72,10 +72,10 @@
 
                         //YOUR TURN: Add layers to the map
                         map.addLayer({
-                            'id': 'states-fill',
+                            'id': 'aivys.states-fill',
                             'type': 'fill',
-                            'source': 'states',
-                            'source-layer': 'states',
+                            'source': 'aivys.states',
+                            'source-layer': 'aivys.states',
                             'layout': {},
                             'paint': {
                                 'fill-color': "#CE575E"
@@ -86,10 +86,10 @@
                         });
 
                         map.addLayer({
-                            'id': 'states-line',
+                            'id': 'aivys.states-line',
                             'type': 'line',
-                            'source': 'states',
-                            'source-layer': 'states',
+                            'source': 'aivys.states',
+                            'source-layer': 'aivys.states',
                             'layout': {
                                 'line-join': 'round',
                                 'line-cap': 'round'
@@ -105,9 +105,9 @@
                 }
             });
             //YOUR TURN: Add source layer
-            map.addSource('states', {
+            map.addSource('aivys.states', {
                 type: 'vector',
-                url: 'mapbox://aivys.states',
+                url: 'mapbox://tilesets-source/aivys/states',
                 promoteId: 'NAME'
             });
 
