@@ -121,8 +121,8 @@
             var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
             var props = district[0].properties;
             var state = district[0].state;
-            var content = '<b>' + 'District Details' + '</b>' + '<br>';
-            content += 'Representative: ' + state.total + '<br>';
+            var content = '<b>' + 'Total Expenditure' + '</b>' + '<br>';
+            content += 'Spending: ' + state.total + '<br>';
             content += 'District: ' + props.CD116FP + '<br>';
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
