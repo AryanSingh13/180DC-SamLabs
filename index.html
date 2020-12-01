@@ -123,7 +123,7 @@
             var state = district[0].state;
             var content = '<b>' + 'Total Expenditure' + '</b>' + '<br>';
             content += 'Spending: ' + state.total + '<br>';
-            content += 'District: ' + props.CD116FP + '<br>';
+            //content += 'District: ' + props.CD116FP + '<br>';
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
         map.on('mouseleave', 'county-fill', function () {
