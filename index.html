@@ -59,8 +59,8 @@
                         results.data.forEach(row => {
                             map.setFeatureState({
                                 //YOUR TURN: Replace with your source tileset and source layer
-                                source: 'mapbox://tilesets-source/aivys/states',
-                                sourceLayer: 'mapbox://tilesets-source/aivys/states',
+                                source: 'states',
+                                sourceLayer: 'states',
                                 //YOUR TURN: Replace with unqiue ID row name
                                 id: row.States
                             },
@@ -72,10 +72,10 @@
 
                         //YOUR TURN: Add layers to the map
                         map.addLayer({
-                            'id': 'aivys.states-fill',
+                            'id': 'states-fill',
                             'type': 'fill',
-                            'source': 'mapbox://tilesets-source/aivys/states',
-                            'source-layer': 'mapbox://tilesets-source/aivys/states',
+                            'source': 'states',
+                            'source-layer': 'states',
                             'layout': {},
                             'paint': {
                                 'fill-color': "#CE575E"
@@ -86,10 +86,10 @@
                         });
 
                         map.addLayer({
-                            'id': 'aivys.states-line',
+                            'id': 'states-line',
                             'type': 'line',
-                            'source': 'mapbox://tilesets-source/aivys/states',
-                            'source-layer': 'mapbox://tilesets-source/aivys/states',
+                            'source': 'states',
+                            'source-layer': 'states',
                             'layout': {
                                 'line-join': 'round',
                                 'line-cap': 'round'
@@ -105,9 +105,9 @@
                 }
             });
             //YOUR TURN: Add source layer
-            map.addSource('mapbox://tilesets-source/aivys/states', {
+            map.addSource('states', {
                 type: 'vector',
-                url: 'mapbox://tilesets-source/aivys/states',
+                url: 'mapbox://aivys.states',
                 promoteId: 'NAME'
             });
 
