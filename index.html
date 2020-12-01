@@ -38,7 +38,7 @@
 
     <script>
         //YOUR TURN: Replace with your Mapbox Token
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYWl2eXMiLCJhIjoiY2tocDBpMWY2MDY5ZTJ2bzQzeXpycXlqNiJ9.8jY9tl5ZJqmQdIDBP0gDqQ';
+        mapboxgl.accessToken = 'sk.eyJ1IjoiYWl2eXMiLCJhIjoiY2tpNjlrdmM0MGswbTJ3cW9wcnFlazNiNCJ9.QODudXYLeElKTWR93rju8w';
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/light-v10', //style url
@@ -49,8 +49,6 @@
         map.on('load', function () {
             //YOUR TURN: Replace with a link to your CSV
             const csvUrl = 'https://github.com/AryanSingh13/180map/blob/main/Database%20-%20Deliverable%20Week%204_5_6_7%20-%20Competitors%20-%20State%20Breakdown.csv';
-            $('#map-div').show();
-            map.resize();
             Papa.parse(csvUrl, {
                 download: true,
                 header: true,
