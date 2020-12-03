@@ -79,19 +79,8 @@
                             'source-layer': 'trees',
                             'layout': {},
                             'paint': {
-                                'fill-color': [
-                                                'let',
-                                                'density',
-                                                 ['/', ['number', '25'], ['number', '2']],
-                                              [
-                                                'interpolate',
-                                                ['density'],
-                                                ['zoom'],
-                                                10,
-                                                ['to-color', '#edf8e9'],
-                                                20,
-                                                ['to-color', '#006d2c']
-                                              ],
+                                'fill-color': ['let', 'density', 25],
+                                              ['interpolate', ['linear'], ['var', 'density'], 10, ['to-color', '#edf8e9'], 20, ['to-color', '#006d2c']],
                                 'fill-opacity': 0.9
                             }
 
