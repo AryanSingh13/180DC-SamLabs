@@ -127,9 +127,9 @@
             var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
             var props = district[0].properties;
             var state = district[0].state;
-            var content = '<b>' + 'Total Expenditure' + '</b>' + '<br>';
-            content += 'Spending: ' + state.total + '<br>';
-            //content += 'District: ' + props.CD116FP + '<br>';
+            var content = '<b>' + 'State Details' + '</b>' + '<br>';
+            content += 'State: ' + state.id + '<br>';
+            content += 'Total Expenditure: ' + state.total + '<br>';
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
         map.on('mouseleave', 'county-fill', function () {
