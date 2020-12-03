@@ -79,17 +79,20 @@
                             'source-layer': 'trees',
                             'layout': {},
                             'paint': {
-                                'fill-color': /*["interpolate", ["linear"], ["feature-state", "total"], 0,
-                                               "rgba(50,50,50,0.9)", 90000000, "rgba(50,255,50,0.9)"],*/
-                                    [
-                                        "match",
-                                        ["feature-state", "total"],
-                                        "22803",
-                                        "rgb(0,0,0)",
-                                        "rgb(50,50,50)"
-                                    ],
+                                'fill-color': [
+                                                'let',
+                                                'density',
+                                                 ['/', ['number', '25'], ['number', '2']],
+                                              [
+                                                'interpolate',
+                                                ['density'],
+                                                ['zoom'],
+                                                10,
+                                                ['to-color', '#edf8e9'],
+                                                20,
+                                                ['to-color', '#006d2c']
+                                              ],
                                 'fill-opacity': 0.9
-
                             }
 
                         });
