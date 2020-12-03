@@ -120,8 +120,8 @@
 
         
         var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: true
+            closeButton: true,
+            closeOnClick: false
         });
         
         map.on('click', 'ca-district-fill', function (e) {
