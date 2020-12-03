@@ -120,7 +120,7 @@
 
         map.on('load', function () {
             //YOUR TURN: Replace with a link to your CSV
-            const csvUrl = 'https://raw.githubusercontent.com/AryanSingh13/180map/main/Map%20Database%20-%20State%20Data.csv?token=AKCYRFAC5G6CXHP43ARNRS272KXKE';
+            const csvUrl = 'https://raw.githubusercontent.com/AryanSingh13/180map/main/Map%20Database%20-%20StateData.csv?token=AKCYRFAO6X74Q6EEXWUL26S72KZQS';
             Papa.parse(csvUrl, {
                 download: true,
                 header: true,
@@ -141,6 +141,8 @@
                                 {
                                     total: row.TOTAL,
                                     name: row.States,
+                                    popdens: row.PopulationDensity,
+                                
                                     foss: row.Foss,
                                     stemscopes: row.STEMScopes,
                                     amplifyscience: row.AmplifyScience,
@@ -267,7 +269,7 @@
             //if (features.length) {
                 //show name and value in sidebar
                 document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
-                document.getElementById('tooltip').innerHTML = "Total: $" + state.total;
+                document.getElementById('tooltip').innerHTML = "Total Spending / Student: " + state.popdens;
                 //for troubleshooting - show complete features info
                 //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
                 
