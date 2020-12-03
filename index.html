@@ -31,7 +31,7 @@
             font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
         }
         
-        .sidebar {
+        #sidebar {
             position: absolute;
             top: 15px;
             left: 15px;
@@ -138,13 +138,13 @@
 
         });
 
-        
+        /*
         var popup = new mapboxgl.Popup({
             closeButton: true,
             closeOnClick: false
         });
         
-        /*
+        
         map.on('click', 'ca-district-fill', function (e) {
             map.getCanvas().style.cursor = 'pointer';
             var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
@@ -175,11 +175,12 @@
             }
         });
         
+        /*
         map.on('mouseleave', 'county-fill', function () {
             map.getCanvas().style.cursor = '';
             popup.remove()
         });
-        
+        */
 
     </script>
 
