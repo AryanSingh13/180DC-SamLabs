@@ -43,7 +43,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/light-v10', //style url
             zoom: 2.5,
-            center: [-100.4, 36.0]
+            center: [-120.4, 36.0]
         });
 
         map.on('load', function () {
@@ -79,12 +79,7 @@
                             'source-layer': 'trees',
                             'layout': {},
                             'paint': {
-                                'fill-color': 
-                                    ['case',
-                                        ["!=", ["feature-state", "total"], -10],
-                                        ["interpolate", ["linear"], ["feature-state", "total"], 20000, "#CE575E", 90000000, "#800000"],
-                                        "#ccc"
-                                    ],
+                                'fill-color': ["interpolate", ["linear"], ["feature-state", "total"], 20000, "#CE575E", 90000000, "#800000"],
                                 'fill-opacity': 0.9
 
                             }
