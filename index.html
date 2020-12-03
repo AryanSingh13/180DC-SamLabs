@@ -152,6 +152,10 @@
             var content = '<b>' + 'State Details' + '</b>' + '<br>';
             content += 'State: ' + state.name + '<br>';
             content += 'Total Expenditure: ' + state.total + '<br>';
+            
+            document.getElementById('tooltip-name').innerHTML = "Tract ";
+            document.getElementById('tooltip').innerHTML = Math.round(5);
+            
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
         map.on('mouseleave', 'county-fill', function () {
