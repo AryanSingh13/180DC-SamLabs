@@ -78,16 +78,10 @@
                             'layout': {},
                             'paint': {
                                 'fill-color': '
-                                    [
-                                        "interpolate",
-                                        ["linear"],
-                                        ["feature-state", "total"],
-                                        22803,
-                                        "rgba(222,235,247,1)",
-                                        89412669.56,
-                                        "rgba(49,130,189,1)",
-                                        "rgba(255,255,255,0)"
-
+                                    ['case',
+                                        ['!=', ['feature-state', 'total'], 0],
+                                        ['interpolate', ['linear'], ['feature-state', 'total'], 22803, 'rgba(222,235,247,1)', 89412669.56, 'rgba(49,130,189,1)'],
+                                        'rgba(255, 255, 255, 0)'
                                     ],
                                 'fill-opacity': 0.9
 
