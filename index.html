@@ -120,7 +120,7 @@
 
         map.on('load', function () {
             //YOUR TURN: Replace with a link to your CSV
-            const csvUrl = 'https://raw.githubusercontent.com/AryanSingh13/180map/main/Map%20Database%20-%20Spending%20%2B%20Totals.csv?token=AKCYRFFQCG5DG7JETC6MUAC72KWQM';
+            const csvUrl = 'https://raw.githubusercontent.com/AryanSingh13/180map/main/Map%20Database%20-%20State%20Data.csv?token=AKCYRFE2DYTVX3ZCKEDDOFK72KXFO';
             Papa.parse(csvUrl, {
                 download: true,
                 header: true,
@@ -267,7 +267,7 @@
             //if (features.length) {
                 //show name and value in sidebar
                 document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
-                document.getElementById('tooltip').innerHTML = "Total: " + state.total;
+                document.getElementById('tooltip').innerHTML = "Total: $" + state.total;
                 //for troubleshooting - show complete features info
                 //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
                 
