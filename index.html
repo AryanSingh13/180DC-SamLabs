@@ -42,6 +42,8 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/light-v10', //style url
+            zoom: 2.5,
+            center: [-100.4, 36.0]
         });
 
         map.on('load', function () {
