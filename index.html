@@ -81,11 +81,11 @@
                             'paint': {
                                 'fill-color': 
                                         [
-                                            ['case',
+                                            'case',
                                                 ['!=', ['feature-state', 'total'], null],
-                                                'let', 'density', ['/', ['number', ['feature-state', 'total']], 894127],
-                                                ['interpolate', ['linear'], ['var', 'density'], 0, '#edf8e9', 100, '#006d2c']
-                                            ]
+                                                ['let', 'density', ['/', ['number', ['feature-state', 'total']], 894127],
+                                                ['interpolate', ['linear'], ['var', 'density'], 0, '#edf8e9', 100, '#006d2c']]
+                                            
                                         ],
                                 'fill-opacity': 0.9
                             }
