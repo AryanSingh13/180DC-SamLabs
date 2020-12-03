@@ -153,8 +153,8 @@
             content += 'State: ' + state.name + '<br>';
             content += 'Total Expenditure: ' + state.total + '<br>';
             
-            document.getElementById('tooltip-name').innerHTML = "Tract ";
-            document.getElementById('tooltip').innerHTML = Math.round(5);
+            document.getElementById('tooltip-name').innerHTML = "Tract " + props.FEDTRACTNO;;
+            document.getElementById('tooltip').innerHTML = Math.round(props.TOTPOPCHG);
             
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
