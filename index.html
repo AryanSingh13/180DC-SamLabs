@@ -264,7 +264,7 @@
             var features = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
             var state = features[0].state;
             
-            if (features.length) {
+            //if (features.length) {
                 //show name and value in sidebar
                 document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
                 document.getElementById('tooltip').innerHTML = "Total: " + state.total;
@@ -322,12 +322,13 @@
                 document.getElementById('lego').innerHTML = "lego: " + state.lego;
                 document.getElementById('vex').innerHTML = "vex: " + state.vex;
                 */
-                
+            /*   
             } else {
                 //if not hovering over a feature set tooltip to empty
                 document.getElementById('tooltip-name').innerHTML = "";
                 document.getElementById('tooltip').innerHTML = "";
             }
+            */
         });
         
         /*
