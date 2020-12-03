@@ -144,6 +144,7 @@
             closeOnClick: false
         });
         
+        /*
         map.on('click', 'ca-district-fill', function (e) {
             map.getCanvas().style.cursor = 'pointer';
             var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
@@ -155,14 +156,16 @@
             
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
+        */
         
-        map.on("mousemove", function (e) {
+        map.on("mousemove", 'ca-district-fill', function (e) {
             var features = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
-
+            var state = features[0].state;
+            
             if (features.length) {
                 //show name and value in sidebar
-                document.getElementById('tooltip-name').innerHTML = "Tract " + features[0].properties.FEDTRACTNO;
-                document.getElementById('tooltip').innerHTML = Math.round(features[0].properties.TOTPOPCHG);
+                document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
+                document.getElementById('tooltip').innerHTML = Math.round(state.total);
                 //for troubleshooting - show complete features info
                 //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
             } else {
