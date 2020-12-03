@@ -79,7 +79,7 @@
                             'source-layer': 'trees',
                             'layout': {},
                             'paint': {
-                                'fill-color': ["interpolate", ["linear"], ["feature-state", "total"], 0,
+                                'fill-color': ["interpolate", ["linear"], ["to-number", ["feature-state", "total"]], 0,
                                                "rgba(222,235,247,1)", 90000000, "rgba(49,130,`89,1)"],
                                     /*[
                                         "match",
