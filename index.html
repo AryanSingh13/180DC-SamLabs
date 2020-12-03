@@ -68,6 +68,7 @@
                                 //YOUR TURN: Add rows you want to style/interact with
                                 {
                                     total: row.TOTAL,
+                                    name: row.States
                                 });
                         });
 
@@ -120,20 +121,21 @@
         
         var popup = new mapboxgl.Popup({
             closeButton: false,
-            closeOnClick: false
+            closeOnClick: true
         });
-        map.on('mousemove', 'ca-district-fill', function (e) {
+        
+        map.on('click', 'ca-district-fill', function (e) {
             map.getCanvas().style.cursor = 'pointer';
             var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
             var props = district[0].properties;
             var state = district[0].state;
             var content = '<b>' + 'State Details' + '</b>' + '<br>';
-            content += 'State: ' + state.id + '<br>';
+            content += 'State: ' + state.name + '<br>';
             content += 'Total Expenditure: ' + state.total + '<br>';
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
         map.on('mouseleave', 'county-fill', function () {
-            map.getCanvas().style.cursor = '';
+            map.getCanvas().style.cursor = 'default';
             popup.remove()
         });
         
