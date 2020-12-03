@@ -135,7 +135,7 @@
             popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
         map.on('mouseleave', 'county-fill', function () {
-            map.getCanvas().style.cursor = 'default';
+            map.getCanvas().style.cursor = '';
             popup.remove()
         });
         
