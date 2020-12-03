@@ -164,8 +164,8 @@
             
             if (features.length) {
                 //show name and value in sidebar
-                document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
-                document.getElementById('tooltip').innerHTML = Math.round(state.total);
+                document.getElementById('tooltip-name').setHTML("State: " + state.name;).addTo(map);
+                document.getElementById('tooltip').setHTML("Total: " + state.total).addTo(map);
                 //for troubleshooting - show complete features info
                 //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
             } else {
