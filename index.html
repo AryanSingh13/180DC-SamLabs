@@ -153,10 +153,16 @@
             content += 'State: ' + state.name + '<br>';
             content += 'Total Expenditure: ' + state.total + '<br>';
             
+            popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
+        });
+        
+        map.on("mousemove", function (e) {
+            var features = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
+
             if (features.length) {
                 //show name and value in sidebar
-                document.getElementById('tooltip-name').innerHTML = "Tract " + props.FEDTRACTNO;
-                document.getElementById('tooltip').innerHTML = Math.round(props.TOTPOPCHG);
+                document.getElementById('tooltip-name').innerHTML = "Tract " + features[0].properties.FEDTRACTNO;
+                document.getElementById('tooltip').innerHTML = Math.round(features[0].properties.TOTPOPCHG);
                 //for troubleshooting - show complete features info
                 //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
             } else {
@@ -164,9 +170,8 @@
                 document.getElementById('tooltip-name').innerHTML = "";
                 document.getElementById('tooltip').innerHTML = "";
             }
-            
-            popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
         });
+        
         map.on('mouseleave', 'county-fill', function () {
             map.getCanvas().style.cursor = '';
             popup.remove()
