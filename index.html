@@ -55,6 +55,7 @@
         <div id="tooltip-name"></div>
         <div id='tooltip'></div>
         
+        <div id='foss'></div>
         <div id='stemscopes'></div>
         <div id='amplifyscience'></div>                           
         <div id='tynker'></div>                           
@@ -140,6 +141,7 @@
                                 {
                                     total: row.TOTAL,
                                     name: row.States,
+                                    foss: row.Foss,
                                     stemscopes: row.STEMScopes,
                                     amplifyscience: row.AmplifyScience,
                                     tynker: row.Tynker,	
@@ -268,6 +270,59 @@
                 document.getElementById('tooltip').innerHTML = "Total: " + state.total;
                 //for troubleshooting - show complete features info
                 //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
+                /*
+                document.getElementById('foss').innerHTML = "foss: " + state.foss;
+                document.getElementById('stemscopes').innerHTML = "stemscopes: " + state.stemscopes;    
+                document.getElementById('amplifyscience').innerHTML = "amplifyscience: " + state.amplifyscience;                           
+                document.getElementById('tynker').innerHTML = "tynker: " + state.tynker;
+                document.getElementById('minecraft').innerHTML = "minecraft: " + state.minecraft;
+                document.getElementById('stemfuse').innerHTML = "stemfuse: " + state.stemfuse;
+                document.getElementById('techterra').innerHTML = "techterra: " + state.techterra;
+                document.getElementById('ngss').innerHTML = "ngss: " + state.ngss;
+                document.getElementById('samlabs').innerHTML = "samlabs: " + state.samlabs;
+                document.getElementById('strawbees').innerHTML = "strawbees: " + state.strawbees;
+                document.getElementById('arduino').innerHTML = "arduino: " + state.arduino;
+                document.getElementById('ozobot').innerHTML = "ozobot: " + state.ozobot;
+                document.getElementById('makey').innerHTML = "makey: " + state.makey;
+                document.getElementById('dremel').innerHTML = "dremel: " + state.dremel;
+                document.getElementById('bbc').innerHTML = "bbc: " + state.bbc;
+                document.getElementById('edison').innerHTML = "edison: " + state.edison;
+                document.getElementById('ubtech').innerHTML = "ubtech: " + state.ubtech;
+                document.getElementById('engino').innerHTML = "engino: " + state.engino;
+                document.getElementById('hololens').innerHTML = "hololens: " + state.hololens;
+                document.getElementById('classvr').innerHTML = "classvr: " + state.classvr;
+                document.getElementById('prusa').innerHTML = "prusa: " + state.prusa;
+                document.getElementById('pitop').innerHTML = "pitop: " + state.pitop;
+                document.getElementById('kinderlab').innerHTML = "kinderlab: " + state.kinderlab;
+                document.getElementById('xyzprinting').innerHTML = "xyzprinting: " + state.xyzprinting;
+                document.getElementById('makeblock').innerHTML = "makeblock: " + state.makeblock;
+                document.getElementById('bloxels').innerHTML = "bloxels: " + state.bloxels;
+                document.getElementById('robo3d').innerHTML = "robo3d: " + state.robo3d;
+                document.getElementById('htcvive').innerHTML = "htcvive: " + state.htcvive;
+                document.getElementById('kano').innerHTML = "kano: " + state.kano;
+                document.getElementById('oculus').innerHTML = "oculus: " + state.oculus;
+                document.getElementById('glowforge').innerHTML = "glowforge: " + state.glowforge;
+                document.getElementById('cubelets').innerHTML = "cubelets: " + state.cubelets;
+                document.getElementById('bbtech').innerHTML = "bbtech: " + state.bbtech;
+                document.getElementById('lulz').innerHTML = "lulz: " + state.lulz;
+                document.getElementById('bbots').innerHTML = "bbots: " + state.bbots;
+                document.getElementById('rasppi').innerHTML = "rasppi: " + state.rasppi;
+                document.getElementById('sparkfun').innerHTML = "sparkfun: " + state.sparkfun;
+                document.getElementById('knew').innerHTML = "knew: " + state.knew;
+                document.getElementById('snapcirc').innerHTML = "snapcirc: " + state.snapcirc;
+                document.getElementById('ultimaker').innerHTML = "ultimaker: " + state.ultimaker;
+                document.getElementById('wworkshop').innerHTML = "wworkshop: " + state.wworkshop;
+                document.getElementById('littlebits').innerHTML = "littlebits: " + state.littlebits;
+                document.getElementById('sphero').innerHTML = "sphero: " + state.sphero;
+                document.getElementById('zspace').innerHTML = "zspace: " + state.zspace;
+                document.getElementById('ps').innerHTML = "ps: " + state.ps;
+                document.getElementById('makerbot').innerHTML = "makerbot: " + state.makerbot;
+                document.getElementById('pitsco').innerHTML = "pitsco: " + state.pitsco;
+                document.getElementById('vernier').innerHTML = "vernier: " + state.vernier;
+                document.getElementById('lego').innerHTML = "lego: " + state.lego;
+                document.getElementById('vex').innerHTML = "vex: " + state.vex;
+                */
+                
             } else {
                 //if not hovering over a feature set tooltip to empty
                 document.getElementById('tooltip-name').innerHTML = "";
