@@ -51,9 +51,10 @@
 
     <div id='sidebar'>
         <h1>State Details</h1>
-        <h2>Competitor Spending Per State</h2>
+        <h2>Competitor Spending</h2>
         <div id="tooltip-name"></div>
         <div id='tooltip'></div>
+        <div id='studpop'></div>
         <hr></hr>
         <div id='foss'></div>
         <div id='stemscopes'></div>
@@ -142,7 +143,7 @@
                                     total: row.TOTAL,
                                     name: row.States,
                                     popdens: row.PopulationDensity,
-                                
+                                    studpop: row.StudentPopulation,
                                     foss: row.Foss,
                                     stemscopes: row.STEMScopes,
                                     amplifyscience: row.AmplifyScience,
@@ -247,7 +248,8 @@
             var state = features[0].state;
 
             document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
-            document.getElementById('tooltip').innerHTML = "Total Spending / Student: " + state.popdens;
+            document.getElementById('tooltip').innerHTML = "Expenditure / Student: " + state.popdens;
+            document.getElementById('studpop').innerHTML = "Student Population: " + state.studpop;
             //for troubleshooting - show complete features info
             //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
                 
