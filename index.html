@@ -55,6 +55,7 @@
         <div id="tooltip-name"></div>
         <div id='tooltip'></div>
         <div id='studpop'></div>
+        <div id='districts'></div>
         <hr></hr>
         <div id='foss'></div>
         <div id='stemscopes'></div>
@@ -144,6 +145,7 @@
                                     name: row.States,
                                     popdens: row.PopulationDensity,
                                     studpop: row.StudentPopulation,
+                                    dist: row.DistrictCount,
                                     foss: row.Foss,
                                     stemscopes: row.STEMScopes,
                                     amplifyscience: row.AmplifyScience,
@@ -250,6 +252,7 @@
             document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
             document.getElementById('tooltip').innerHTML = "Expenditure / Student: " + state.popdens;
             document.getElementById('studpop').innerHTML = "Student Population: " + state.studpop;
+            document.getElementById('dist').innerHTML = "Districts: " + state.dist;
             //for troubleshooting - show complete features info
             //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
                 
