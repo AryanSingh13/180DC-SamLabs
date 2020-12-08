@@ -198,7 +198,7 @@
 
                         //YOUR TURN: Add layers to the map
                         map.addLayer({
-                            'id': 'ca-district-fill',
+                            'id': 'state-fill',
                             'type': 'fill',
                             'source': 'aivys.states',
                             'source-layer': 'trees',
@@ -215,7 +215,7 @@
                         });
 
                         map.addLayer({
-                            'id': 'ca-district-line',
+                            'id': 'state-line',
                             'type': 'line',
                             'source': 'aivys.states',
                             'source-layer': 'trees',
@@ -241,104 +241,68 @@
             });
 
         });
-
-        /*
-        var popup = new mapboxgl.Popup({
-            closeButton: true,
-            closeOnClick: false
-        });
         
-        
-        map.on('click', 'ca-district-fill', function (e) {
-            map.getCanvas().style.cursor = 'pointer';
-            var district = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
-            var props = district[0].properties;
-            var state = district[0].state;
-            var content = '<b>' + 'State Details' + '</b>' + '<br>';
-            content += 'State: ' + state.name + '<br>';
-            content += 'Total Expenditure: ' + state.total + '<br>';
-            
-            popup.setLngLat(e.lngLat).setHTML(content).addTo(map);
-        });
-        */
-        
-        map.on("click", 'ca-district-fill', function (e) {
-            var features = map.queryRenderedFeatures(e.point, { layers: ['ca-district-fill'] });
+        map.on("click", 'state-fill', function (e) {
+            var features = map.queryRenderedFeatures(e.point, { layers: ['state-fill'] });
             var state = features[0].state;
+
+            document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
+            document.getElementById('tooltip').innerHTML = "Total Spending / Student: " + state.popdens;
+            //for troubleshooting - show complete features info
+            //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
+                
+            document.getElementById('foss').innerHTML = "Foss: " + state.foss;
+            document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
+            document.getElementById('amplifyscience').innerHTML = "Amplify Science: " + state.amplifyscience;                           
+            document.getElementById('tynker').innerHTML = "Tynker: " + state.tynker;
+            document.getElementById('minecraft').innerHTML = "Minecraft: " + state.minecraft;
+            document.getElementById('stemfuse').innerHTML = "STEMFuse: " + state.stemfuse;             
+            document.getElementById('techterra').innerHTML = "TechTerra Edducation: " + state.techterra;
+            document.getElementById('ngss').innerHTML = "All Other NGSS Curriculum: " + state.ngss;
+            document.getElementById('samlabs').innerHTML = "SAM Labs: " + state.samlabs;
+            document.getElementById('strawbees').innerHTML = "StrawBees: " + state.strawbees;
+            document.getElementById('arduino').innerHTML = "Arduino: " + state.arduino;
+            document.getElementById('ozobot').innerHTML = "Ozobot: " + state.ozobot;
+            document.getElementById('makey').innerHTML = "Makey Makey: " + state.makey;
+            document.getElementById('dremel').innerHTML = "Dremel: " + state.dremel;
+            document.getElementById('bbc').innerHTML = "BBC micro:bit: " + state.bbc;
+            document.getElementById('edison').innerHTML = "Edison: " + state.edison;
+            document.getElementById('ubtech').innerHTML = "UBTech: " + state.ubtech;
+            document.getElementById('engino').innerHTML = "Engino: " + state.engino;
+            document.getElementById('hololens').innerHTML = "Microsoft Hololens: " + state.hololens;
+            document.getElementById('classvr').innerHTML = "ClassVR: " + state.classvr;
+            document.getElementById('prusa').innerHTML = "Prusa: " + state.prusa;
+            document.getElementById('pitop').innerHTML = "Pi-Top: " + state.pitop;
+            document.getElementById('kinderlab').innerHTML = "Kinderlab Robotics: " + state.kinderlab;
+            document.getElementById('xyzprinting').innerHTML = "Kinderlab Robotics: " + state.xyzprinting;
+            document.getElementById('makeblock').innerHTML = "Makeblock: " + state.makeblock;
+            document.getElementById('bloxels').innerHTML = "Bloxels: " + state.bloxels;
+            document.getElementById('robo3d').innerHTML = "Robo 3D: " + state.robo3d;
+            document.getElementById('htcvive').innerHTML = "HTC Vive: " + state.htcvive;
+            document.getElementById('kano').innerHTML = "Kano: " + state.kano;
+            document.getElementById('oculus').innerHTML = "Oculus: " + state.oculus;
+            document.getElementById('glowforge').innerHTML = "Glowforge: " + state.glowforge;
+            document.getElementById('cubelets').innerHTML = "Cubelets: " + state.cubelets;
+            document.getElementById('bbtech').innerHTML = "Birdbrain Technology: " + state.bbtech;
+            document.getElementById('lulz').innerHTML = "LulzBot: " + state.lulz;
+            document.getElementById('bbots').innerHTML = "Bee-Bots: " + state.bbots;
+            document.getElementById('rasppi').innerHTML = "Raspberry Pi: " + state.rasppi;
+            document.getElementById('sparkfun').innerHTML = "Sparkfun: " + state.sparkfun;
+            document.getElementById('knew').innerHTML = "K'Nex: " + state.knew;
+            document.getElementById('snapcirc').innerHTML = "Snap Circuits: " + state.snapcirc;
+            document.getElementById('ultimaker').innerHTML = "Ultimaker: " + state.ultimaker;
+            document.getElementById('wworkshop').innerHTML = "Wonderworkshop: " + state.wworkshop;
+            document.getElementById('littlebits').innerHTML = "Littlebits: " + state.littlebits;
+            document.getElementById('sphero').innerHTML = "Sphero: " + state.sphero;
+            document.getElementById('zspace').innerHTML = "ZSpace: " + state.zspace;
+            document.getElementById('ps').innerHTML = "Pasco Scientific: " + state.ps;
+            document.getElementById('makerbot').innerHTML = "Makerbot: " + state.makerbot;
+            document.getElementById('pitsco').innerHTML = "Pitsco: " + state.pitsco;
+            document.getElementById('vernier').innerHTML = "Vernier: " + state.vernier;
+            document.getElementById('lego').innerHTML = "LEGO Education: " + state.lego;
+            document.getElementById('vex').innerHTML = "Vex: " + state.vex;
             
-            //if (features.length) {
-                //show name and value in sidebar
-                document.getElementById('tooltip-name').innerHTML = "State: " + state.name;
-                document.getElementById('tooltip').innerHTML = "Total Spending / Student: " + state.popdens;
-                //for troubleshooting - show complete features info
-                //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
-                
-                document.getElementById('foss').innerHTML = "Foss: " + state.foss;
-                document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
-                document.getElementById('amplifyscience').innerHTML = "Amplify Science: " + state.amplifyscience;                           
-                document.getElementById('tynker').innerHTML = "Tynker: " + state.tynker;
-                document.getElementById('minecraft').innerHTML = "Minecraft: " + state.minecraft;
-                document.getElementById('stemfuse').innerHTML = "STEMFuse: " + state.stemfuse;
-                document.getElementById('techterra').innerHTML = "TechTerra Edducation: " + state.techterra;
-                document.getElementById('ngss').innerHTML = "All Other NGSS Curriculum: " + state.ngss;
-                document.getElementById('samlabs').innerHTML = "SAM Labs: " + state.samlabs;
-                document.getElementById('strawbees').innerHTML = "StrawBees: " + state.strawbees;
-                document.getElementById('arduino').innerHTML = "Arduino: " + state.arduino;
-                document.getElementById('ozobot').innerHTML = "Ozobot: " + state.ozobot;
-                document.getElementById('makey').innerHTML = "Makey Makey: " + state.makey;
-                document.getElementById('dremel').innerHTML = "Dremel: " + state.dremel;
-                document.getElementById('bbc').innerHTML = "BBC micro:bit: " + state.bbc;
-                document.getElementById('edison').innerHTML = "Edison: " + state.edison;
-                document.getElementById('ubtech').innerHTML = "UBTech: " + state.ubtech;
-                document.getElementById('engino').innerHTML = "Engino: " + state.engino;
-                document.getElementById('hololens').innerHTML = "Microsoft Hololens: " + state.hololens;
-                document.getElementById('classvr').innerHTML = "ClassVR: " + state.classvr;
-                document.getElementById('prusa').innerHTML = "Prusa: " + state.prusa;
-                document.getElementById('pitop').innerHTML = "Pi-Top: " + state.pitop;
-                document.getElementById('kinderlab').innerHTML = "Kinderlab Robotics: " + state.kinderlab;
-                document.getElementById('xyzprinting').innerHTML = "Kinderlab Robotics: " + state.xyzprinting;
-                document.getElementById('makeblock').innerHTML = "Makeblock: " + state.makeblock;
-                document.getElementById('bloxels').innerHTML = "Bloxels: " + state.bloxels;
-                document.getElementById('robo3d').innerHTML = "Robo 3D: " + state.robo3d;
-                document.getElementById('htcvive').innerHTML = "HTC Vive: " + state.htcvive;
-                document.getElementById('kano').innerHTML = "Kano: " + state.kano;
-                document.getElementById('oculus').innerHTML = "Oculus: " + state.oculus;
-                document.getElementById('glowforge').innerHTML = "Glowforge: " + state.glowforge;
-                document.getElementById('cubelets').innerHTML = "Cubelets: " + state.cubelets;
-                document.getElementById('bbtech').innerHTML = "Birdbrain Technology: " + state.bbtech;
-                document.getElementById('lulz').innerHTML = "LulzBot: " + state.lulz;
-                document.getElementById('bbots').innerHTML = "Bee-Bots: " + state.bbots;
-                document.getElementById('rasppi').innerHTML = "Raspberry Pi: " + state.rasppi;
-                document.getElementById('sparkfun').innerHTML = "Sparkfun: " + state.sparkfun;
-                document.getElementById('knew').innerHTML = "K'Nex: " + state.knew;
-                document.getElementById('snapcirc').innerHTML = "Snap Circuits: " + state.snapcirc;
-                document.getElementById('ultimaker').innerHTML = "Ultimaker: " + state.ultimaker;
-                document.getElementById('wworkshop').innerHTML = "Wonderworkshop: " + state.wworkshop;
-                document.getElementById('littlebits').innerHTML = "Littlebits: " + state.littlebits;
-                document.getElementById('sphero').innerHTML = "Sphero: " + state.sphero;
-                document.getElementById('zspace').innerHTML = "ZSpace: " + state.zspace;
-                document.getElementById('ps').innerHTML = "Pasco Scientific: " + state.ps;
-                document.getElementById('makerbot').innerHTML = "Makerbot: " + state.makerbot;
-                document.getElementById('pitsco').innerHTML = "Pitsco: " + state.pitsco;
-                document.getElementById('vernier').innerHTML = "Vernier: " + state.vernier;
-                document.getElementById('lego').innerHTML = "LEGO Education: " + state.lego;
-                document.getElementById('vex').innerHTML = "Vex: " + state.vex;
-                
-            /*   
-            } else {
-                //if not hovering over a feature set tooltip to empty
-                document.getElementById('tooltip-name').innerHTML = "";
-                document.getElementById('tooltip').innerHTML = "";
-            }
-            */
         });
-        
-        /*
-        map.on('mouseleave', 'county-fill', function () {
-            map.getCanvas().style.cursor = '';
-            popup.remove()
-        });
-        */
 
     </script>
 
