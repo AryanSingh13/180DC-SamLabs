@@ -58,6 +58,7 @@
         <div id='dist'></div>
         <hr></hr>
         <div id='demo'></div>
+        <!--
         <div id='foss'></div>
         <div id='stemscopes'></div>
         <div id='amplifyscience'></div>                           
@@ -108,7 +109,7 @@
         <div id='vernier'></div>                           	
         <div id='lego'></div>                            
         <div id='vex'></div>                           
-        
+        -->
     </div>
     
     <script>
@@ -192,6 +193,14 @@
                                     vernier: row.Vernier,	
                                     lego: row.LEGOEducation,	
                                     vex: row.Vex,
+                                    comp: 
+                               [row.Foss, row.STEMScopes, row.AmplifyScience, row.Tynker, row.Minecraft, row.STEMFuse, row.TechTerraEdducation, 
+                                row.AllOtherNGSSCurriculum, row.SAMLabs, row.StrawBees, row.Arduino, row.Ozobot, row.MakeyMakey, row.Dremel, row.BBCmicrobit, 
+                                row.Edison, row.UBTech,
+                                row.Engino, row.MicrosoftHololens, row.ClassVR, row.Prusa, row.PiTop, row.KinderlabRobotics, row.XYZPrinting, row.Makeblock, 
+                                row.Bloxels, row.Robo3D, row.HTCVive, row.Kano, row.Oculus, row.Glowforge, row.Cubelets, row.BirdbrainTechnology, row.LulzBot, 
+                                row.BeeBots, row.RaspberryPi, row.Sparkfun, row.KNex, row.SnapCircuits, row.Ultimaker, row.Wonderworkshop, row.Littlebits, 
+                                row.Sphero, row.ZSpace, row.PascoScientific, row.Makerbot, row.Pitsco, row.Vernier, row.LEGOEducation, row.Vex]; 
                                 });
                         });
 
@@ -268,6 +277,7 @@
                  document.getElementById(html_ids[i]).innerHTML = html_ids[i] + ": " + competitors[i];  
             }
             */
+            competitors = state.comp;
             var content = "";
             
             for(i = 0; i < competitors.length; i++) {
