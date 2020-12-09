@@ -57,6 +57,7 @@
         <div id='studpop'></div>
         <div id='dist'></div>
         <hr></hr>
+        <div id='demo'></div>
         <div id='foss'></div>
         <div id='stemscopes'></div>
         <div id='amplifyscience'></div>                           
@@ -261,11 +262,19 @@
                             'makeblock', 'bloxels', 'robo3d', 'htcvive', 'kano', 'oculus', 'glowforge', 'cubelets', 'bbtech', 'lulz', 'bbots', 'rasppi', 
                             'sparkfun', 'knew', 'snapcirc', 'ultimaker', 'wworkshop', 'littlebits', 'sphero', 'zspace', 'ps', 'makerbot', 'pitsco', 'vernier', 
                             'lego', 'vex'];
-            
+            /*
             var i;
             for(i = 0; i < competitors.length; i++) {
                  document.getElementById(html_ids[i]).innerHTML = html_ids[i] + ": " + competitors[i];  
             }
+            */
+            var content = "";
+            
+            for(i = 0; i < competitors.length; i++) {
+                 content += html_ids[i] + ": " + competitors[i] + "<br>";
+            }
+            
+            document.getElementById('demo').innerHTML = content
             
             /*
             document.getElementById('foss').innerHTML = "Foss: " + state.foss;
