@@ -214,16 +214,20 @@
                                state.bbots, state.rasppi, state.sparkfun, state.knew, state.snapcirc, state.ultimaker, state.wworkshop, state.littlebits, 
                                state.sphero, state.zspace, state.ps, state.makerbot, state.pitsco, state.vernier, state.lego, state.vex];   
             
-            var html_ids = ['foss', 'stemscopes', 'amplifyscience', 'tynker', 'minecraft', 'stemfuse', 'techterra', 'ngss', 'samlabs', 'strawbees', 'arduino', 
-                            'ozobot', 'makey', 'dremel', 'bbc', 'edison', 'ubtech', 'engino', 'hololens', 'classvr', 'prusa', 'pitop', 'kinderlab', 'xyzprinting',
-                            'makeblock', 'bloxels', 'robo3d', 'htcvive', 'kano', 'oculus', 'glowforge', 'cubelets', 'bbtech', 'lulz', 'bbots', 'rasppi', 
-                            'sparkfun', 'knew', 'snapcirc', 'ultimaker', 'wworkshop', 'littlebits', 'sphero', 'zspace', 'ps', 'makerbot', 'pitsco', 'vernier', 
-                            'lego', 'vex'];
+            var names = ['Foss', 'STEMScopes', 'Amplify Science', 'Tynker', 'Minecraft', 'STEMFuse', 'TechTerra Education', 'All Other NGSS Curriculum', 
+                         'SAM Labs', 'StrawBees', 'Arduino', 
+                            'Ozobot', 'Makey Makey', 'Dremel', 'BBC micro:bit', 'Edison', 'UBTech', 'Engino', 'Microsoft Hololens', 'ClassVR', 'Prusa', 'Pi-Top', 
+                         'Kinderlab Robotics', 'XYZPrinting',
+                            'Makeblock', 'Bloxels', 'Robo 3D', 'HTC Vive', 'Kano', 'Oculus', 'Glowforge', 'Cubelets', 'Birdbrain Technology', 'LulzBot', 
+                         'Bee-Bots', 'Raspberry Pi', 
+                            'Sparkfun', "K'Nex", 'Snap Circuits', 'Ultimaker', 'Wonderworkshop', 'Littlebits', 'Sphero', 'ZSpace', 'Pasco Scientific', 
+                         'Makerbot', 'Pitsco', 'Vernier', 
+                            'LEGO Education', 'Vex'];
             
             var content = "";
             
             for(i = 0; i < competitors.length; i++) {
-                 content += html_ids[i] + ": " + competitors[i] + "<br>";
+                 content += names[i] + ": " + competitors[i] + "<br>";
             }
             
             document.getElementById('demo').innerHTML = content
