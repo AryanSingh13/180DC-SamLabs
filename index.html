@@ -205,8 +205,7 @@
             document.getElementById('tooltip').innerHTML = "Expenditure / Student: " + state.popdens;
             document.getElementById('studpop').innerHTML = "Student Population: " + state.studpop;
             document.getElementById('dist').innerHTML = "Districts: " + state.dist;
-            //for troubleshooting - show complete features info
-            //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
+            
             var competitors = [state.foss, state.stemscopes, state.amplifyscience, state.tynker, state.minecraft, state.stemfuse, state.techterra, state.ngss,
                                state.samlabs, state.strawbees, state.arduino, state.ozobot, state.makey, state.dremel, state.bbc, state.edison, state.ubtech,
                                state.engino, state.hololens, state.classvr, state.prusa, state.pitop, state.kinderlab, state.xyzprinting, state.makeblock, 
@@ -215,14 +214,11 @@
                                state.sphero, state.zspace, state.ps, state.makerbot, state.pitsco, state.vernier, state.lego, state.vex];   
             
             var names = ['Foss', 'STEMScopes', 'Amplify Science', 'Tynker', 'Minecraft', 'STEMFuse', 'TechTerra Education', 'All Other NGSS Curriculum', 
-                         'SAM Labs', 'StrawBees', 'Arduino', 
-                            'Ozobot', 'Makey Makey', 'Dremel', 'BBC micro:bit', 'Edison', 'UBTech', 'Engino', 'Microsoft Hololens', 'ClassVR', 'Prusa', 'Pi-Top', 
-                         'Kinderlab Robotics', 'XYZPrinting',
-                            'Makeblock', 'Bloxels', 'Robo 3D', 'HTC Vive', 'Kano', 'Oculus', 'Glowforge', 'Cubelets', 'Birdbrain Technology', 'LulzBot', 
-                         'Bee-Bots', 'Raspberry Pi', 
-                            'Sparkfun', "K'Nex", 'Snap Circuits', 'Ultimaker', 'Wonderworkshop', 'Littlebits', 'Sphero', 'ZSpace', 'Pasco Scientific', 
-                         'Makerbot', 'Pitsco', 'Vernier', 
-                            'LEGO Education', 'Vex'];
+                         'SAM Labs', 'StrawBees', 'Arduino', 'Ozobot', 'Makey Makey', 'Dremel', 'BBC micro:bit', 'Edison', 'UBTech', 'Engino', 
+                         'Microsoft Hololens', 'ClassVR', 'Prusa', 'Pi-Top', 'Kinderlab Robotics', 'XYZPrinting', 'Makeblock', 'Bloxels', 'Robo 3D', 'HTC Vive', 
+                         'Kano', 'Oculus', 'Glowforge', 'Cubelets', 'Birdbrain Technology', 'LulzBot', 'Bee-Bots', 'Raspberry Pi', 'Sparkfun', "K'Nex", 
+                         'Snap Circuits', 'Ultimaker', 'Wonderworkshop', 'Littlebits', 'Sphero', 'ZSpace', 'Pasco Scientific', 'Makerbot', 'Pitsco', 'Vernier', 
+                         'LEGO Education', 'Vex'];
             
             var content = "";
             
@@ -231,58 +227,7 @@
             }
             
             document.getElementById('demo').innerHTML = content
-            
-            /*
-            document.getElementById('foss').innerHTML = "Foss: " + state.foss;
-            document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
-            document.getElementById('amplifyscience').innerHTML = "Amplify Science: " + state.amplifyscience;                           
-            document.getElementById('tynker').innerHTML = "Tynker: " + state.tynker;
-            document.getElementById('minecraft').innerHTML = "Minecraft: " + state.minecraft;
-            document.getElementById('stemfuse').innerHTML = "STEMFuse: " + state.stemfuse;             
-            document.getElementById('techterra').innerHTML = "TechTerra Edducation: " + state.techterra;
-            document.getElementById('ngss').innerHTML = "All Other NGSS Curriculum: " + state.ngss;
-            document.getElementById('samlabs').innerHTML = "SAM Labs: " + state.samlabs;
-            document.getElementById('strawbees').innerHTML = "StrawBees: " + state.strawbees;
-            document.getElementById('arduino').innerHTML = "Arduino: " + state.arduino;
-            document.getElementById('ozobot').innerHTML = "Ozobot: " + state.ozobot;
-            document.getElementById('makey').innerHTML = "Makey Makey: " + state.makey;
-            document.getElementById('dremel').innerHTML = "Dremel: " + state.dremel;
-            document.getElementById('bbc').innerHTML = "BBC micro:bit: " + state.bbc;
-            document.getElementById('edison').innerHTML = "Edison: " + state.edison;
-            document.getElementById('ubtech').innerHTML = "UBTech: " + state.ubtech;
-            document.getElementById('engino').innerHTML = "Engino: " + state.engino;
-            document.getElementById('hololens').innerHTML = "Microsoft Hololens: " + state.hololens;
-            document.getElementById('classvr').innerHTML = "ClassVR: " + state.classvr;
-            document.getElementById('prusa').innerHTML = "Prusa: " + state.prusa;
-            document.getElementById('pitop').innerHTML = "Pi-Top: " + state.pitop;
-            document.getElementById('kinderlab').innerHTML = "Kinderlab Robotics: " + state.kinderlab;
-            document.getElementById('xyzprinting').innerHTML = "Kinderlab Robotics: " + state.xyzprinting;
-            document.getElementById('makeblock').innerHTML = "Makeblock: " + state.makeblock;
-            document.getElementById('bloxels').innerHTML = "Bloxels: " + state.bloxels;
-            document.getElementById('robo3d').innerHTML = "Robo 3D: " + state.robo3d;
-            document.getElementById('htcvive').innerHTML = "HTC Vive: " + state.htcvive;
-            document.getElementById('kano').innerHTML = "Kano: " + state.kano;
-            document.getElementById('oculus').innerHTML = "Oculus: " + state.oculus;
-            document.getElementById('glowforge').innerHTML = "Glowforge: " + state.glowforge;
-            document.getElementById('cubelets').innerHTML = "Cubelets: " + state.cubelets;
-            document.getElementById('bbtech').innerHTML = "Birdbrain Technology: " + state.bbtech;
-            document.getElementById('lulz').innerHTML = "LulzBot: " + state.lulz;
-            document.getElementById('bbots').innerHTML = "Bee-Bots: " + state.bbots;
-            document.getElementById('rasppi').innerHTML = "Raspberry Pi: " + state.rasppi;
-            document.getElementById('sparkfun').innerHTML = "Sparkfun: " + state.sparkfun;
-            document.getElementById('knew').innerHTML = "K'Nex: " + state.knew;
-            document.getElementById('snapcirc').innerHTML = "Snap Circuits: " + state.snapcirc;
-            document.getElementById('ultimaker').innerHTML = "Ultimaker: " + state.ultimaker;
-            document.getElementById('wworkshop').innerHTML = "Wonderworkshop: " + state.wworkshop;
-            document.getElementById('littlebits').innerHTML = "Littlebits: " + state.littlebits;
-            document.getElementById('sphero').innerHTML = "Sphero: " + state.sphero;
-            document.getElementById('zspace').innerHTML = "ZSpace: " + state.zspace;
-            document.getElementById('ps').innerHTML = "Pasco Scientific: " + state.ps;
-            document.getElementById('makerbot').innerHTML = "Makerbot: " + state.makerbot;
-            document.getElementById('pitsco').innerHTML = "Pitsco: " + state.pitsco;
-            document.getElementById('vernier').innerHTML = "Vernier: " + state.vernier;
-            document.getElementById('lego').innerHTML = "LEGO Education: " + state.lego;
-            document.getElementById('vex').innerHTML = "Vex: " + state.vex;
+           
             */
         });
 
