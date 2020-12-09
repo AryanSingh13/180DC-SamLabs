@@ -215,7 +215,9 @@
             var content = "";
             
             for(i = 0; i < competitors.length; i++) {
-                 content += names[i] + ": " + competitors[i] + "<br>";
+                if (competitors[i] != 0) { 
+                    content += names[i] + ": " + competitors[i] + "<br>";
+                }
             }
             
             document.getElementById('demo').innerHTML = content
