@@ -255,7 +255,8 @@
             document.getElementById('dist').innerHTML = "Districts: " + state.dist;
             //for troubleshooting - show complete features info
             //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
-                
+            var competitors = [state.foss, state.stemscopes];   
+            
             document.getElementById('foss').innerHTML = "Foss: " + state.foss;
             document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
             document.getElementById('amplifyscience').innerHTML = "Amplify Science: " + state.amplifyscience;                           
