@@ -111,17 +111,15 @@
     </div>
     
     <script>
-        //YOUR TURN: Replace with your Mapbox Token
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWl2eXMiLCJhIjoiY2tocDBpMWY2MDY5ZTJ2bzQzeXpycXlqNiJ9.8jY9tl5ZJqmQdIDBP0gDqQ';
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/light-v10', //style url
+            style: 'mapbox://styles/mapbox/light-v10',
             zoom: 2.5,
             center: [-120.4, 36.0]
         });
 
         map.on('load', function () {
-            //YOUR TURN: Replace with a link to your CSV
             const csvUrl = 'https://raw.githubusercontent.com/AryanSingh13/180map/main/Map%20Database%20-%20StateData.csv?token=AKCYRFAZ7AZVBIBCI6HMOL273EPCM';
             Papa.parse(csvUrl, {
                 download: true,
@@ -132,14 +130,11 @@
                         console.log(results.data);
                         results.data.forEach(row => {
                             map.setFeatureState({
-                                //YOUR TURN: Replace with your source tileset and source layer
                                 source: 'aivys.states',
                                 sourceLayer: 'trees',
                                                                 
-                                //YOUR TURN: Replace with unqiue ID row name
                                 id: row.States
                             },
-                                //YOUR TURN: Add rows you want to style/interact with
                                 {
                                     total: row.TOTAL,
                                     name: row.States,
@@ -199,7 +194,6 @@
                                 });
                         });
 
-                        //YOUR TURN: Add layers to the map
                         map.addLayer({
                             'id': 'state-fill',
                             'type': 'fill',
@@ -236,7 +230,7 @@
                     })
                 }
             });
-            //YOUR TURN: Add source layer
+
             map.addSource('aivys.states', {
                 type: 'vector',
                 url: 'mapbox://aivys.states',
@@ -255,16 +249,27 @@
             document.getElementById('dist').innerHTML = "Districts: " + state.dist;
             //for troubleshooting - show complete features info
             //document.getElementById('tooltip').innerHTML = JSON.stringify(features, null, 2);
-            var competitors = [state.foss, state.stemscopes];   
-            var html_ids = ['foss', 'stemscopes'];
+            var competitors = [state.foss, state.stemscopes, state.amplifyscience, state.tynker, state.minecraft, state.stemfuse, state.techterra, state.ngss,
+                               state.samlabs, state.strawbees, state.arduino, state.ozobot, state.makey, state.dremel, state.bbc, state.edison, state.ubtech,
+                               state.engino, state.hololens, state.classvr, state.prusa, state.pitop, state.kinderlab, state.xyzprinting, state.makeblock, 
+                               state.bloxels, state.robo3d, state.htcvive, state.kano, state.oculus, state.glowforge, state.cubelets, state.bbtech, state.lulz, 
+                               state.bbots, state.rasppi, state.sparkfun, state.knew, state.snapcirc, state.ultimaker, state.wworkshop, state.littlebits, 
+                               state.sphero, state.zspace, state.ps, state.makerbot, state.pitsco, state.vernier, state.lego, state.vex];   
+            
+            var html_ids = ['foss', 'stemscopes', 'amplifyscience', 'tynker', 'minecraft', 'stemfuse', 'techterra', 'ngss', 'samlabs', 'strawbees', 'arduino', 
+                            'ozobot', 'makey', 'dremel', 'bbc', 'edison', 'ubtech', 'engino', 'hololens', 'classvr', 'prusa', 'pitop', 'kinderlab', 'xyzprinting',
+                            'makeblock', 'bloxels', 'robo3d', 'htcvive', 'kano', 'oculus', 'glowforge', 'cubelets', 'bbtech', 'lulz', 'bbots', 'rasppi', 
+                            'sparkfun', 'knew', 'snapcirc', 'ultimaker', 'wworkshop', 'littlebits', 'sphero', 'zspace', 'ps', 'makerbot', 'pitsco', 'vernier', 
+                            'lego', 'vex'];
             
             var i;
             for(i = 0; i < competitors.length; i++) {
                  document.getElementById(html_ids[i]).innerHTML = html_ids[i] + ": " + competitors[i];  
             }
             
-            //document.getElementById('foss').innerHTML = "Foss: " + state.foss;
-            //document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
+            /*
+            document.getElementById('foss').innerHTML = "Foss: " + state.foss;
+            document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
             document.getElementById('amplifyscience').innerHTML = "Amplify Science: " + state.amplifyscience;                           
             document.getElementById('tynker').innerHTML = "Tynker: " + state.tynker;
             document.getElementById('minecraft').innerHTML = "Minecraft: " + state.minecraft;
@@ -313,7 +318,7 @@
             document.getElementById('vernier').innerHTML = "Vernier: " + state.vernier;
             document.getElementById('lego').innerHTML = "LEGO Education: " + state.lego;
             document.getElementById('vex').innerHTML = "Vex: " + state.vex;
-            
+            */
         });
 
     </script>
