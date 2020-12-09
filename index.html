@@ -258,8 +258,13 @@
             var competitors = [state.foss, state.stemscopes];   
             var html_ids = ['foss', 'stemscopes'];
             
-            document.getElementById('foss').innerHTML = "Foss: " + state.foss;
-            document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
+            var i;
+            for(i = 0; i < competitors.length; i++) {
+                 document.getElementById(html_ids[i]).innerHTML = html_ids[i] + ": " + competitors[i];  
+            }
+            
+            //document.getElementById('foss').innerHTML = "Foss: " + state.foss;
+            //document.getElementById('stemscopes').innerHTML = "STEMScopes: " + state.stemscopes;    
             document.getElementById('amplifyscience').innerHTML = "Amplify Science: " + state.amplifyscience;                           
             document.getElementById('tynker').innerHTML = "Tynker: " + state.tynker;
             document.getElementById('minecraft').innerHTML = "Minecraft: " + state.minecraft;
